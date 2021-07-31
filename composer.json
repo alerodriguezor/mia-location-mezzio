@@ -18,6 +18,9 @@
             "Mia\\Location\\": "src/"
         }
     },
+    "scripts": {
+        "serve": "php -S 0.0.0.0:8181 -t example/"
+    },
     "repositories": [
         {
             "type": "git",
