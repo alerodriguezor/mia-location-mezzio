@@ -45,11 +45,11 @@ class AllDataHandler extends \Mia\Core\Request\MiaRequestHandler
     public function handle(\Psr\Http\Message\ServerRequestInterface $request): \Psr\Http\Message\ResponseInterface
     {
         // Get all countries
-        $this->data = MiaCountry::all()->toArray();
+        $this->data = MiaCountry::where('id', '>', 0)->orderBy('title', 'asc')->get()->toArray();
         // get All states
-        $this->states = MiaState::all()->toArray();
+        $this->states = MiaState::where('id', '>', 0)->orderBy('title', 'asc')->get()->toArray();
         // get all cities
-        $this->cities = MiaCity::all()->toArray();
+        $this->cities = MiaCity::where('id', '>', 0)->orderBy('title', 'asc')->get()->toArray();
         // Process States
         $this->processData();
         // Devolvemos respuesta
